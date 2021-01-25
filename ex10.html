@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>Object</h1>
+    <h2>Create</h2>
+    <script>
+      var coworkers = {
+        "programmer": "seoyun",
+        "designer": "uno"
+      };
+      document.write("programmer : "+ coworkers.programmer+"<br>"); // .은 객체 접근 지정자(object access operator)
+      document.write("designer : "+ coworkers.designer+"<br>");
+
+      coworkers.bookkeeper = "king";
+      document.write("bookkeeper : " +coworkers.bookkeeper+"<br>");
+
+      coworkers["data scientist"] = "juman";
+      document.write("data scientist : " +coworkers["data scientist"]+"<br>");
+    </script>
+    <h2>Iterate</h2>
+    <script>
+      for(var key in coworkers) {
+         // coworkers라는 변수가 가리키는 객체에 있는 key값들을 가져오는 반복문
+         // coworkers에 있는 key들을 하나하나 꺼내서 중괄호에 있는 코드를 실행해주는 명령
+        // key값 : "programmer","designer","bookkeeper","data scientist"
+        //document.write(key+'<br>'); // coworkers에 있는 key값들을 모조리 출력
+
+        document.write(key+':'+coworkers[key]+'<br>'); // 모든 데이터 순회 가능
+      }
+    </script>
+    <h2>Property & Method</h2>
+    <script>
+      coworkers.showAll = function(){
+        for(var key in this) { // coworkers를 this로 바꿔도 동일함
+
+          document.write(key+':'+coworkers[key]+'<br>');
+        }
+    }
+    coworkers.showAll();
+    </script>
+
+  </body>
+</html>
